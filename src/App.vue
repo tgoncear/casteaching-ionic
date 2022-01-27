@@ -63,10 +63,16 @@ export default defineComponent({
       },
       {
       title: 'Video 1',
-        url: '/videos/1',
+        url: '/video/1',
         iosIcon: mailOutline,
         mdIcon: mailSharp
   },
+      {
+        title: 'Videos',
+        url: '/videos',
+        iosIcon: mailOutline,
+        mdIcon: mailSharp
+      },
       {
         title: 'Outbox',
         url: '/folder/Outbox',

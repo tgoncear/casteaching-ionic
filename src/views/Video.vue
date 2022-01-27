@@ -5,14 +5,14 @@
         <ion-buttons slot="start">
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
-        <ion-title>Video {{ $route.params.id }}</ion-title>
+        <ion-title>{{video.title}}</ion-title>
       </ion-toolbar>
     </ion-header>
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
+          <ion-title size="large">{video.title}}</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import casteaching from '@acacha/casteaching'
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
 export default {
@@ -48,18 +49,11 @@ export default {
   },
   data(){
     return{
-      video:{
-        id:1,
-        title: 'lll',
-        description: 'test',
-        url: 'https://www.youtube.com/embed/lp1Mxu44_wI',
-        published_at: new Date()
-
-      }
+      video:{}
     }
   },
-  created(){
-
+  async created(){
+      this.video = await casteaching({baseUrl: 'http://casteaching.test/api/'}).video.show(this.$route.params.id)
   }
 }
 </script>
