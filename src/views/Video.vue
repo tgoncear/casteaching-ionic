@@ -56,6 +56,7 @@ export default {
       this.video = await casteaching({baseUrl: 'http://casteaching.tudorgoncear.me/api'}).video.show(this.$route.params.id)
   }
 }
+//
 </script>
 
 <style scoped>
