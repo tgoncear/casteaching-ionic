@@ -53,7 +53,7 @@ export default {
     }
   },
   async created(){
-      this.video = await casteaching({baseUrl: 'http://casteaching.test/api/'}).video.show(this.$route.params.id)
+      this.video = await casteaching({baseUrl: 'http://casteaching.tudorgoncear.me/api'}).video.show(this.$route.params.id)
   }
 }
 </script>
