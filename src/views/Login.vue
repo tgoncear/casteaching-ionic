@@ -101,7 +101,7 @@ export default {
       //   console.log(error);
       // }
       const apiClient = axios.create({
-        baseURL: 'http://casteaching.tudorgoncear.me/api',
+        baseURL: 'https://casteaching.tudorgoncear.me/api',
         withCredentials: true,
         headers: {
           Accept: 'application/json',
@@ -123,7 +123,7 @@ export default {
       }
       token = response.data
       const axiosClient = axios.create({
-        baseURL: 'http://casteaching.tudorgoncear.me/api',
+        baseURL: 'https://casteaching.tudorgoncear.me/api',
         withCredentials: true,
         headers: {
           Accept: 'application/json',

@@ -155,7 +155,7 @@ export default {
     },
     async fetchVideos() {
       try {
-        this.videos = await casteaching({baseUrl: 'http://casteaching.tudorgoncear.me/api'}).videos();
+        this.videos = await casteaching({baseUrl: 'https://casteaching.tudorgoncear.me/api'}).videos();
       } catch (error) {
         console.log(error);
         // TODO toast
