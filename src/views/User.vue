@@ -18,7 +18,7 @@
 
       <div>
         <h1>User</h1>
-        Estem logats amb el usuari {{user.name}}
+        Name: {{ this.user && this.user.name}}
       </div>
     </ion-content>
   </ion-page>
@@ -29,7 +29,7 @@ import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, Io
 import store from "@/store";
 
 export default {
-  name: 'user',
+  name: 'User',
   components: {
     IonButtons,
     IonContent,
@@ -41,8 +41,11 @@ export default {
   },
   data(){
     return{
-      user: store.user
+      user: {}
     }
+  },
+  async mounted () {
+    this.user = await store.get('user')
   }
 }
 </script>
