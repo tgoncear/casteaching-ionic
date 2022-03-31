@@ -33,7 +33,7 @@
             <ion-input v-model="password" placeholder="password" type="password"></ion-input>
           </ion-item>
 
-          <ion-button @click="login">Login</ion-button>
+          <ion-button :disabled="clicked" @click="login">Login</ion-button>
 
         </ion-card-content>
       </ion-card>
@@ -80,11 +80,13 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      clicked: false
     }
   },
   methods: {
     async login() {
+      this.clicked = true
       // OBTENIR EL DEVICE_NAME:
       const info = await Device.getInfo();
       // CAPACITOR // CORDOVA
@@ -146,6 +148,7 @@ export default {
       // route parameters wantedRoute
       if(this.$route.params && this.$route.params.wantedRoute) path = this.$route.params.wantedRoute
       this.$router.push({ path })
+      this.clicked=false
     }
   }
 }
